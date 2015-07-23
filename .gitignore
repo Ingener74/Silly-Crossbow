@@ -55,3 +55,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+.cproject
+.project
+SillyCrossbow.py
+SillyCrossbow_wrap.c
+SillyCrossbow_wrap.cpp
