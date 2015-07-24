@@ -61,3 +61,5 @@ target/
 SillyCrossbow.py
 SillyCrossbow_wrap.c
 SillyCrossbow_wrap.cpp
+MANIFEST
+README
