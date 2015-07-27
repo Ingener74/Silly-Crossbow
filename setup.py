@@ -9,20 +9,18 @@ shutil.copyfile('README.md', 'README')
 setup(name='Silly Crossbow',
       version='1.0',
       description="""
-      Simple SWIG + distutil example
-      example implements cropping transparent image borders
+Simple SWIG + distutil example
+example implements cropping transparent image borders
       """,
       long_description=open('README.md').read(),
       author='Shnaider Pavel',
       author_email='shnaiderpasha@gmail.com',
       url='https://github.com/Ingener74/Silly-Crossbow',
-      ext_modules=[
-          Extension(
-              "_SillyCrossbow",[
-                  "SillyCrossbow.i",
-                  "silly-crossbow.cpp"],
-              swig_opts=['-c++']
-          )
-      ],
+      ext_modules=[Extension("_SillyCrossbow", ["SillyCrossbow.i",
+                                                "silly-crossbow.cpp"],
+                             swig_opts=['-c++'],
+                             extra_compile_args=['-std=c++11']
+                             )
+                   ],
       scripts=['SillyCrossbow.py']
       )
