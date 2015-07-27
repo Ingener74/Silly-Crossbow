@@ -1,6 +1,10 @@
 
 %module SillyCrossbow
 
+%begin %{
+#include <cmath>
+%}
+
 %{
 #include "silly-crossbow.h" 
 %}
