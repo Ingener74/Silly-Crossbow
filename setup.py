@@ -1,7 +1,9 @@
 # encoding: utf8
-
+from os import path
 from distutils.core import setup, Extension
 from distutils.command.build_ext import build_ext as _build_ext
+
+import shutil
 
 
 class MyBuildExt(_build_ext):
@@ -9,10 +11,10 @@ class MyBuildExt(_build_ext):
         _build_ext.__init__(self, *args, **kwargs)
 
     def run(self):
-        print u'Ща я построю'
+        source_dir = path.dirname(path.abspath(__file__))
+        self.spawn(['cmake', source_dir])
+        self.spawn(['cmake', '--build', source_dir, '--clean-first'])
 
-
-import shutil
 
 shutil.copyfile('README.md', 'README')
 
@@ -35,7 +37,6 @@ example implements cropping transparent image borders
                              language='c++'
                              )
                    ],
-      packages=['SillyCrossbow'],
       cmdclass={
           'build_ext': MyBuildExt
       }

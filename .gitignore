@@ -66,3 +66,7 @@ README
 _SillyCrossbow.blabla
 _SillyCrossbow.exe
 build_linux
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+CMakeFiles
