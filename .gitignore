@@ -70,3 +70,5 @@ CMakeCache.txt
 Makefile
 cmake_install.cmake
 CMakeFiles
+SillyCrossbow/SillyCrossbow/SillyCrossbowPYTHON_wrap.cxx
+src/libSillyCrossbow.a

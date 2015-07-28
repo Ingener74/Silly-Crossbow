@@ -1,2 +1,8 @@
 include README.md
-include silly-crossbow.h
+
+include CMakeLists.txt
+include tests.py
+
+recursive-include src *
+recursive-include data *
+recursive-include SillyCrossbow/SillyCrossbow *

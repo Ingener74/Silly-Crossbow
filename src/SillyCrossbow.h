@@ -6,6 +6,10 @@
 
 std::string SillyCrossbow();
 
+struct CropRect {
+    int x, y, width, height;
+};
+
 class CropTransparent {
 public:
     CropTransparent();
@@ -18,11 +22,12 @@ public:
     int getCroppedWidth() const;
     int getCroppedOffsetX() const;
     int getCroppedOffsetY() const;
+    CropRect getRect() const;
 
 private:
     void cropTransparent(int width, int height, int threshold, const std::vector<char>& buffer);
 
-    int _croppedWidth = 0, _croppedHeight = 0, _croppedOffsetX = 0, _croppedOffsetY = 0;
+    CropRect _rect;
 };
 
 #endif
