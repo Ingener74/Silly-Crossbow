@@ -1,6 +1,16 @@
 # encoding: utf8
 
 from distutils.core import setup, Extension
+from distutils.command.build_ext import build_ext as _build_ext
+
+
+class MyBuildExt(_build_ext):
+    def __init__(self, *args, **kwargs):
+        _build_ext.__init__(self, *args, **kwargs)
+
+    def run(self):
+        print u'Ща я построю'
+
 
 import shutil
 
@@ -20,10 +30,13 @@ example implements cropping transparent image borders
                                                 "silly-crossbow.cpp"],
                              swig_opts=['-c++', '-outdir', 'SillyCrossbow'],
                              extra_compile_args=['-std=c++11'],
-                             #extra_link_args=['-o', '_SillyCrossbow'],
+                             # extra_link_args=['-o', '_SillyCrossbow'],
                              define_macros=[('__NO_INLINE__', None)],
                              language='c++'
                              )
                    ],
-      packages=['SillyCrossbow']
+      packages=['SillyCrossbow'],
+      cmdclass={
+          'build_ext': MyBuildExt
+      }
       )

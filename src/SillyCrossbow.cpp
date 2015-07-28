@@ -1,4 +1,5 @@
-#include "silly-crossbow.h"
+#include "SillyCrossbow.h"
+
 #include <iostream>
 
 using namespace std;
