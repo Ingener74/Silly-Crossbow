@@ -15,12 +15,22 @@ class Building(build_ext):
         build_ext.__init__(self, *args, **kwargs)
 
     def run(self):
-        self.spawn(['cmake',
-                    source_dir,
-                    '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + output_dir,
-                    '-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=' + output_dir,
-                    '-DCMAKE_SWIG_OUTDIR=' + output_dir,
-                    ])
+        if True: # для винды
+            self.spawn(['cmake',
+                        source_dir,
+                        '-G',
+                        'MSYS Makefiles',
+                        '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + output_dir.replace('\\', '/'),
+                        '-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=' + output_dir.replace('\\', '/'),
+                        '-DCMAKE_SWIG_OUTDIR=' + output_dir.replace('\\', '/'),
+                        ])
+        else:
+            self.spawn(['cmake',
+                        source_dir,
+                        '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + output_dir,
+                        '-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=' + output_dir,
+                        '-DCMAKE_SWIG_OUTDIR=' + output_dir,
+                        ])
         self.spawn(['cmake', '--build', source_dir, '--clean-first'])
 
 
@@ -45,10 +55,10 @@ example implements cropping transparent image borders
       ext_modules=[Extension('SillyCrossbow', [])],
       packages=['SillyCrossbow'],
       cmdclass={
-          'build_ext': Building
-          , 'install_lib': Installation
-      },
-      install_requires=[
-          'Pillow',
-      ]
+          'build_ext': Building,
+          'install_lib': Installation
+      }#,
+      # install_requires=[
+      #     'Pillow',
+      # ]
       )
