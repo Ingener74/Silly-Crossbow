@@ -47,5 +47,8 @@ example implements cropping transparent image borders
       cmdclass={
           'build_ext': Building
           , 'install_lib': Installation
-      }
+      },
+      install_requires=[
+          'Pillow',
+      ]
       )
