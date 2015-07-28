@@ -28,15 +28,8 @@ example implements cropping transparent image borders
       author='Shnaider Pavel',
       author_email='shnaiderpasha@gmail.com',
       url='https://github.com/Ingener74/Silly-Crossbow',
-      ext_modules=[Extension("_SillyCrossbow", ["SillyCrossbow.i",
-                                                "silly-crossbow.cpp"],
-                             swig_opts=['-c++', '-outdir', 'SillyCrossbow'],
-                             extra_compile_args=['-std=c++11'],
-                             # extra_link_args=['-o', '_SillyCrossbow'],
-                             define_macros=[('__NO_INLINE__', None)],
-                             language='c++'
-                             )
-                   ],
+      ext_modules=[Extension('SillyCrossbow', [])],
+      packages=['SillyCrossbow'],
       cmdclass={
           'build_ext': MyBuildExt
       }

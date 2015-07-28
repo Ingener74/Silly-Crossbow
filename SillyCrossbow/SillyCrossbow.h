@@ -9,8 +9,9 @@ std::string SillyCrossbow();
 class CropTransparent {
 public:
     CropTransparent();
-    CropTransparent(int width, int height, const std::vector<char>& buffer);
-    CropTransparent(int width, int height, void* data);
+    CropTransparent(int width, int height, int threshold, const std::vector<char>& buffer);
+    CropTransparent(int width, int height, int threshold, const char* data);
+    CropTransparent(int width, int height, int threshold, void* data);
     virtual ~CropTransparent();
 
     int getCroppedHeight() const;
@@ -19,7 +20,7 @@ public:
     int getCroppedOffsetY() const;
 
 private:
-    void cropTransparent(int width, int height, const std::vector<char>& buffer);
+    void cropTransparent(int width, int height, int threshold, const std::vector<char>& buffer);
 
     int _croppedWidth = 0, _croppedHeight = 0, _croppedOffsetX = 0, _croppedOffsetY = 0;
 };
