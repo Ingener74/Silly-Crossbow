@@ -13,7 +13,7 @@ print SillyCrossbow()
 
 fire = Image.open(sys.argv[1])
 fire.show()
-cropper = CropTransparent(fire.width, fire.height, int(sys.argv[2]), fire.tostring())
+cropper = CropTransparent(fire.width, fire.height, int(sys.argv[2]), fire.tostring(), True)
 
 print cropper.getCroppedOffsetX()
 print cropper.getCroppedOffsetY()
@@ -28,5 +28,10 @@ print crop_rect.width
 print crop_rect.height
 
 cropped_image, x, y, w, h = crop_image(fire, 50)
-
 cropped_image.show()
+
+# crim2 = cropper.getCroppedImage()
+# crim3 = Image.frombytes(mode='RGBA',
+#                         size=(crim2.getWidth(), crim2.getHeight()),
+#                         data=str(crim2.getData()))
+# crim3.show()

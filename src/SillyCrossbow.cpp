@@ -5,9 +5,24 @@
 
 using namespace std;
 
-struct RGBA {
-    uint8_t r, g, b, a;
-};
+Image::Image(int width, int height) :
+    _width(width), _height(height), _buffer(_width * _height) {
+}
+
+Image::~Image() {
+}
+
+int Image::getWidth() {
+    return _width;
+}
+
+int Image::getHeight() {
+    return _height;
+}
+
+const char* Image::getData() {
+    return reinterpret_cast<const char*>(_buffer.data());
+}
 
 std::string SillyCrossbow() {
     return R"(Silly Crossbow is Cpp + SWIG + distutils + crop transparent image borders library for Python.
@@ -21,40 +36,7 @@ SillCrossbow - это C++/SWIG/Python библиотека для нахожде
 CropTransparent::CropTransparent() {
 }
 
-CropTransparent::CropTransparent(int width, int height, int threshold, const std::vector<char>& buffer) {
-    cropTransparent(width, height, threshold, buffer);
-}
-
-CropTransparent::CropTransparent(int width, int height, int threshold, const char* data) {
-    cropTransparent(width, height, threshold, { data, data + width * height * 4 });
-}
-
-CropTransparent::CropTransparent(int width, int height, int threshold, void* data) {
-    cropTransparent(width, height, threshold,
-        { static_cast<char*>(data), static_cast<char*>(data) + width * height * 4 });
-}
-
-CropTransparent::~CropTransparent() {
-}
-
-int CropTransparent::getCroppedWidth() const {
-    return _rect.width;
-}
-
-int CropTransparent::getCroppedHeight() const {
-    return _rect.height;
-}
-
-int CropTransparent::getCroppedOffsetX() const {
-    return _rect.x;
-}
-
-int CropTransparent::getCroppedOffsetY() const {
-    return _rect.y;
-}
-
-void CropTransparent::cropTransparent(int width, int height, int threshold, const std::vector<char>& buffer) {
-
+CropTransparent::CropTransparent(int width, int height, int threshold, const std::vector<char>& buffer, bool createCropImage) {
     size_t x1 = numeric_limits<size_t>::max();
     size_t y1 = numeric_limits<size_t>::max();
 
@@ -92,8 +74,60 @@ void CropTransparent::cropTransparent(int width, int height, int threshold, cons
 
     _rect.width = (x2 + 1) - x1;
     _rect.height = (y2 + 1) - y1;
+
+    if (createCropImage) {
+        _croppedImage = Image { _rect.width, _rect.height };
+
+        RGBA* dst = reinterpret_cast<RGBA*>(const_cast<char*>(_croppedImage.getData()));
+        RGBA* src = reinterpret_cast<RGBA*>(const_cast<char*>(buffer.data()));
+
+        for (size_t y = y1; y < y2; ++y) {
+            for (size_t x = x1; x < x2; ++x, ++dst) {
+
+                RGBA* p = src + y * width + x;
+
+                dst->r = p->r ? p->r : 1;
+                dst->g = p->g ? p->g : 1;
+                dst->b = p->b ? p->b : 1;
+                dst->a = p->a ? p->a : 1;
+            }
+        }
+    }
+}
+
+CropTransparent::CropTransparent(int width, int height, int threshold, const char* data, bool createCropImage) :
+    CropTransparent(width, height, threshold, { data, data + width * height * 4 }, createCropImage) {
+}
+
+CropTransparent::CropTransparent(int width, int height, int threshold, void* data, bool createCropImage) :
+    CropTransparent(width, height, threshold,
+        { static_cast<char*>(data), static_cast<char*>(data) + width * height * 4 }, createCropImage) {
+}
+
+CropTransparent::~CropTransparent() {
+}
+
+int CropTransparent::getCroppedWidth() const {
+    return _rect.width;
+}
+
+int CropTransparent::getCroppedHeight() const {
+    return _rect.height;
+}
+
+int CropTransparent::getCroppedOffsetX() const {
+    return _rect.x;
+}
+
+int CropTransparent::getCroppedOffsetY() const {
+    return _rect.y;
 }
 
 CropRect CropTransparent::getRect() const {
     return _rect;
 }
+
+Image CropTransparent::getCroppedImage() const {
+    return _croppedImage;
+}
+
