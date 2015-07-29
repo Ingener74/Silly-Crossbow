@@ -10,7 +10,12 @@ struct RGBA {
 };
 
 std::string SillyCrossbow() {
-    return "Silly Crossbow is SWIG + distutils + crop transparent image borders example";
+    return R"(Silly Crossbow is Cpp + SWIG + distutils + crop transparent image borders library for Python.
+The goal to make library for the crop rectangle clear edges in the image, 
+and learn how to create a library on the C++/CMake/SWIG and use python.
+
+SillCrossbow - это C++/SWIG/Python библиотека для нахождения прямоугольника обрезки
+прозрачных краёв на изображении)";
 }
 
 CropTransparent::CropTransparent() {

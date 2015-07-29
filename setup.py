@@ -1,4 +1,5 @@
 # encoding: utf8
+import platform
 from os import path
 from distutils.core import setup, Extension
 from distutils.command.build_ext import build_ext
@@ -15,7 +16,7 @@ class Building(build_ext):
         build_ext.__init__(self, *args, **kwargs)
 
     def run(self):
-        if True: # для винды
+        if platform.system() == 'Windows':
             self.spawn(['cmake',
                         source_dir,
                         '-G',
@@ -24,13 +25,15 @@ class Building(build_ext):
                         '-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=' + output_dir.replace('\\', '/'),
                         '-DCMAKE_SWIG_OUTDIR=' + output_dir.replace('\\', '/'),
                         ])
-        else:
+        elif platform.system() == 'Linux':
             self.spawn(['cmake',
                         source_dir,
                         '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + output_dir,
                         '-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=' + output_dir,
                         '-DCMAKE_SWIG_OUTDIR=' + output_dir,
                         ])
+        else:
+            raise SystemError('Windows or Linux only')
         self.spawn(['cmake', '--build', source_dir, '--clean-first'])
 
 
@@ -42,8 +45,8 @@ class Installation(install_lib):
 
 shutil.copyfile('README.md', 'README')
 
-setup(name='Silly Crossbow',
-      version='1.0',
+setup(name='SillyCrossbow',
+      version='1.0.3',
       description="""
 Simple SWIG + distutil example
 example implements cropping transparent image borders
@@ -53,12 +56,37 @@ example implements cropping transparent image borders
       author_email='shnaiderpasha@gmail.com',
       url='https://github.com/Ingener74/Silly-Crossbow',
       ext_modules=[Extension('SillyCrossbow', [])],
-      packages=['SillyCrossbow'],
+      packages=['SillyCrossbow/SillyCrossbow'],
       cmdclass={
           'build_ext': Building,
           'install_lib': Installation
-      }#,
-      # install_requires=[
-      #     'Pillow',
-      # ]
+      },
+      scripts=['silly-crossbow-fire-crop.py', 'silly-crossbow-tests.py'],
+      data_files=[('data', ['data/fire.png'])],
+      install_requires=[
+          'Pillow',
+      ],
+      classifiers=[
+          "Development Status :: 3 - Alpha",
+          "License :: Freeware",
+          "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+          "Natural Language :: English",
+          "Natural Language :: Russian",
+          "Operating System :: POSIX",
+          "Operating System :: POSIX :: Linux",
+          "Programming Language :: C",
+          "Programming Language :: C++",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2.6",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: Implementation",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Multimedia",
+          "Topic :: Multimedia :: Graphics",
+          "Topic :: Multimedia :: Graphics :: Editors",
+          "Topic :: Multimedia :: Graphics :: Editors :: Raster-Based",
+          "Topic :: Scientific/Engineering",
+          "Topic :: Scientific/Engineering :: Image Recognition",
+      ]
       )
