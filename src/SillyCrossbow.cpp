@@ -63,7 +63,7 @@ void CropTransparent::cropTransparent(int width, int height, int threshold, cons
 
     RGBA* p = reinterpret_cast<RGBA*>(const_cast<char*>(buffer.data()));
 
-    for (size_t y = 0; y < height; ++y) {
+    for (size_t y = 0; y < height; ++y)
         for (size_t x = 0; x < width; ++x, ++p) {
             if (p->a > threshold && x1 > x)
                 x1 = x;
@@ -76,8 +76,16 @@ void CropTransparent::cropTransparent(int width, int height, int threshold, cons
 
             if (p->a > threshold && y > y2)
                 y2 = y;
+
+            if (!p->r)
+                p->r = 1;
+            if (!p->g)
+                p->g = 1;
+            if (!p->b)
+                p->b = 1;
+            if (!p->a)
+                p->a = 1;
         }
-    }
 
     _rect.x = x1;
     _rect.y = y1;
