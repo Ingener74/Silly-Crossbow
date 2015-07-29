@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="854c102f-df31-443e-a52a-f1affd11b6be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/crop.py" afterPath="$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/crop.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Silly-Crossbow.iws" />
@@ -29,20 +29,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.29268292">
+              <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crop.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="crop.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/crop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4390244">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
               <folding />
             </state>
@@ -94,8 +94,8 @@
         <option value="$PROJECT_DIR$/silly-crossbow-fire-crop.py" />
         <option value="$PROJECT_DIR$/silly-crossbow-crop.py" />
         <option value="$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/__init__.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/crop.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -522,7 +522,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438169639586</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="поправил глупую ошибку">
+      <created>1438170812203</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1438170812203</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -577,7 +583,8 @@
     <MESSAGE value="переделал кое-что и изменил версию, перезалил на pypi" />
     <MESSAGE value="добавил пару полезных функции" />
     <MESSAGE value="поправил функцию нахождения прямоугольника на чистку пустых пикселей" />
-    <option name="LAST_COMMIT_MESSAGE" value="поправил функцию нахождения прямоугольника на чистку пустых пикселей" />
+    <MESSAGE value="поправил глупую ошибку" />
+    <option name="LAST_COMMIT_MESSAGE" value="поправил глупую ошибку" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -747,10 +754,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
+    <entry file="file://$PROJECT_DIR$/silly-crossbow-crop.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/crop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -763,18 +778,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/silly-crossbow-crop.py">
+    <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/crop.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4390244">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.29268292">
+          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
           <folding />
         </state>
       </provider>
