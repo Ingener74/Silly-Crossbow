@@ -16,4 +16,4 @@ def crop_image(image, threshold):
 
 
 def crop_image_from_file(filename, threshold):
-    return crop_image(Image.open(filename, threshold))
+    return crop_image(Image.open(filename), threshold)
