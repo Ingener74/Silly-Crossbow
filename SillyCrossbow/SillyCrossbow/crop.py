@@ -17,3 +17,20 @@ def crop_image(image, threshold):
 
 def crop_image_from_file(filename, threshold):
     return crop_image(Image.open(filename), threshold)
+
+
+def crop_image2(image, threshold):
+    cropper = CropTransparent(image.width, image.height, threshold, image.tostring(), True)
+    x = cropper.getCroppedOffsetX()
+    y = cropper.getCroppedOffsetY()
+    width = cropper.getCroppedWidth()
+    height = cropper.getCroppedHeight()
+    image = cropper.getCroppedImage()
+
+    return image, x, y, width, height
+
+
+def crop_image2_from_file(filename, threshold):
+    return crop_image2(Image.open(filename), threshold)
+
+
