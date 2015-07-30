@@ -65,6 +65,7 @@ example implements cropping transparent image borders
       data_files=[('data', ['data/fire.png'])],
       install_requires=[
           'Pillow',
+          'PySide'
       ],
       classifiers=[
           "Development Status :: 3 - Alpha",

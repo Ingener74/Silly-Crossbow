@@ -6,7 +6,8 @@
 using namespace std;
 
 Image::Image(int width, int height) :
-    _width(width), _height(height), _buffer(_width * _height) {
+    _width(width), _height(height)/*, _buffer() */{
+    _buffer.resize(_width * _height);
 }
 
 Image::~Image() {
@@ -22,6 +23,10 @@ int Image::getHeight() {
 
 const char* Image::getData() {
     return reinterpret_cast<const char*>(_buffer.data());
+}
+
+void* Image::getDataVoid() {
+    return static_cast<void*>(_buffer.data());
 }
 
 std::string SillyCrossbow() {
@@ -81,17 +86,34 @@ CropTransparent::CropTransparent(int width, int height, int threshold, const std
         RGBA* dst = reinterpret_cast<RGBA*>(const_cast<char*>(_croppedImage.getData()));
         RGBA* src = reinterpret_cast<RGBA*>(const_cast<char*>(buffer.data()));
 
-        for (size_t y = y1; y < y2; ++y) {
-            for (size_t x = x1; x < x2; ++x, ++dst) {
+        auto test =  static_cast<RGBA*>(_croppedImage.getDataVoid());
 
-                RGBA* p = src + y * width + x;
-
-                dst->r = p->r ? p->r : 1;
-                dst->g = p->g ? p->g : 1;
-                dst->b = p->b ? p->b : 1;
-                dst->a = p->a ? p->a : 1;
-            }
+/*
+        for (size_t i = 0; i < _croppedImage.getWidth() * _croppedImage.getHeight(); ++i, ++test, ++src) {
+//            *test = {src->r ? src->r : 1, src->g ? src->g : 1, src->b ? src->b : 1, src->a ? src->a : 1};
+            *test = {100, 100, 100, 200};
         }
+*/
+        for (size_t i = 0; i < 100; ++i, ++test) {
+//            *test = {src->r ? src->r : 1, src->g ? src->g : 1, src->b ? src->b : 1, src->a ? src->a : 1};
+            *test = {100, 200, 100, 200};
+        }
+        for (size_t i = 100; i < 200; ++i, ++test) {
+//            *test = {src->r ? src->r : 1, src->g ? src->g : 1, src->b ? src->b : 1, src->a ? src->a : 1};
+            *test = {200, 100, 100, 200};
+        }
+
+//        for (size_t y = y1; y < y2; ++y) {
+//            for (size_t x = x1; x < x2; ++x, ++dst) {
+//
+//                RGBA p = src[y * width + x];
+//
+//                dst->r = 100; // p.r ? p.r : 1;
+//                dst->g = 200; // p.g ? p.g : 1;
+//                dst->b = 100; // p.b ? p.b : 1;
+//                dst->a = 200; // p.a ? p.a : 1;
+//            }
+//        }
     }
 }
 
@@ -131,3 +153,15 @@ Image CropTransparent::getCroppedImage() const {
     return _croppedImage;
 }
 
+void CropTransparent::fillWithImage(unsigned long data) {
+    cout << sizeof(data) << endl;
+
+    RGBA* dst = reinterpret_cast<RGBA*>(data);
+    RGBA* src = reinterpret_cast<RGBA*>(const_cast<char*>(_croppedImage.getData()));
+
+    for (size_t i = 0; i < _croppedImage.getWidth() * _croppedImage.getHeight(); ++i, ++dst, ++src) {
+//            *test = {src->r ? src->r : 1, src->g ? src->g : 1, src->b ? src->b : 1, src->a ? src->a : 1};
+//        *test = {100, 100, 100, 200};
+        *dst = *src;
+    }
+}

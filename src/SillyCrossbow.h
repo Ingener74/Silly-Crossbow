@@ -19,6 +19,8 @@ public:
     int getHeight();
     const char* getData();
 
+    void* getDataVoid();
+
 private:
     int _width = 0, _height = 0;
     std::vector<RGBA> _buffer;
@@ -43,6 +45,8 @@ public:
 
     CropRect getRect() const;
     Image getCroppedImage() const;
+
+    void fillWithImage(unsigned long);
 
 private:
     CropRect _rect;
