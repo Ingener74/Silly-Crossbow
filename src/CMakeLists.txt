@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.0)
 
 set(NAME SillyCrossbow)
 
-add_definitions(-fPIC)
+if(MINGW)
+else()
+    add_definitions(-fPIC)
+endif()
+
 add_library(${NAME}
     SillyCrossbow.cpp
 )
