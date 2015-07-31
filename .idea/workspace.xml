@@ -1,10 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="854c102f-df31-443e-a52a-f1affd11b6be" name="Default" comment="добавил Pillow в зависимости">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Silly-Crossbow.iml" afterPath="$PROJECT_DIR$/.idea/Silly-Crossbow.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
+    <list default="true" id="854c102f-df31-443e-a52a-f1affd11b6be" name="Default" comment="мерж">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_animated.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_bordered-pulled.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_core.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_fixed-width.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_icons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_larger.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_list.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_path.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_rotated-flipped.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_stacked.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/_variables.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/animated.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/css/bootstrap-theme.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/css/bootstrap-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/css/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/css/bootstrap.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/bordered-pulled.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/core.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/fixed-width.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/font-awesome.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/scss/font-awesome.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/icons.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/larger.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/list.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/js/npm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/path.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/rotated-flipped.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/stacked.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/less/variables.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Silly-Crossbow.iws" />
@@ -30,11 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.3902439">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -60,12 +106,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="silly-crossbow-tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/silly-crossbow-tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crop.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/crop.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.061588332">
+              <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Html5" />
       </list>
     </option>
   </component>
@@ -84,6 +151,7 @@
         <option value="$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/__init__.py" />
         <option value="$PROJECT_DIR$/tests.py" />
         <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/doc/index.html" />
       </list>
     </option>
   </component>
@@ -123,8 +191,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -143,8 +209,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Silly-Crossbow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Silly-Crossbow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -154,6 +236,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RunManager" selected="Python tests.Unittests in tests">
     <configuration default="false" name="Unittests in tests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -453,14 +536,20 @@
       <option name="project" value="LOCAL" />
       <updated>1438097066184</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="мерж">
+      <created>1438260413356</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1438260413356</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="889" y="322" width="1031" height="758" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36372846" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866043" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -505,13 +594,78 @@
     <MESSAGE value="корректно собирается cmake, пока не полностью устанавливается" />
     <MESSAGE value="собирается, устанавливается и проходит тести на линуксе" />
     <MESSAGE value="добавил Pillow в зависимости" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил Pillow в зависимости" />
+    <MESSAGE value="мерж" />
+    <option name="LAST_COMMIT_MESSAGE" value="мерж" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MANIFEST.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silly-crossbow-tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/crop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MANIFEST.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -600,16 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/distutils/extension.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5609756">
@@ -655,6 +799,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.958333">
+          <caret line="49" column="78" selection-start-line="49" selection-start-column="78" selection-end-line="49" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silly-crossbow-tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -673,8 +846,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3902439">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SillyCrossbow/SillyCrossbow/crop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.061588332">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
           <folding />
         </state>
       </provider>
