@@ -1,10 +1,15 @@
 # encoding: utf8
 import sys
-from PySide.QtCore import Qt, QRect
-from PySide.QtGui import QApplication, QPushButton, QWidget, QPainter, QImage
-from PIL import Image
-from SillyCrossbow import CropTransparent, SillyCrossbow, crop_image3_from_file
+
+from PySide.QtCore import Qt, QRect, QSettings, QDir, QDirIterator
+
+from PySide.QtGui import QApplication, QWidget, QPainter, QImage, QTransform
+
+from SillyCrossbow import crop_image3_from_file
 from res import Ui_CropWindow
+
+COMPANY = 'Venus.Games'
+APPNAME = 'SillyCrossbow'
 
 
 # noinspection PyPep8Naming
@@ -13,20 +18,27 @@ class CropWidget(QWidget, Ui_CropWindow):
         QWidget.__init__(self, parent)
         self.setupUi(self)
 
-        self.images = [QImage(i) for i in ['data/fire.png',
-                                           'data/ship1.png']]
-        self.images += [crop_image3_from_file(i, 50)[0] for i in ['data/fire.png',
-                                           'data/ship1.png']]
+        self.settings = QSettings(QSettings.IniFormat, QSettings.UserScope, COMPANY, APPNAME)
+        self.restoreGeometry(self.settings.value(self.__class__.__name__))
 
-        self.s = 2.
-        w = 0
-        h = 0
-        for i in self.images:
-            w += i.width() / self.s
-            if h < i.height() / self.s:
-                h = i.height() / self.s
+        self.images = []
+        if len(sys.argv) > 1:
+            d = QDir(path=sys.argv[1])
+            d.setNameFilters(['*.png'])
+            d.setFilter(QDir.Files or QDir.NoDotAndDotDot)
 
-        self.resize(w + 10, h + 10)
+            d = QDirIterator(d)
+
+            images = []
+
+            while d.hasNext():
+                images.append(d.next())
+
+            for i in images:
+                print i
+
+            self.images = [QImage(i) for i in images]
+            self.images += [crop_image3_from_file(i, 50)[0] for i in images]
 
     def keyPressEvent(self, e):
         if e.key() == Qt.Key_Escape:
@@ -34,50 +46,19 @@ class CropWidget(QWidget, Ui_CropWindow):
 
     def paintEvent(self, e):
         painter = QPainter(self)
+        painter.setWorldTransform(QTransform().scale(0.5, 0.5))
 
         x = 0
-        s = self.s
 
         for i in self.images:
-            w = int(float(i.width()) / s)
-            h = int(float(i.height()) / s)
-            painter.drawImage(QRect(x, 0, w, h), i)
-            painter.drawRect(x, 0, w, h)
-            x += i.width() / s
+            painter.drawImage(QRect(x, 0, i.width(), i.height()), i)
+            painter.drawRect(x, 0, i.width(), i.height())
+            x += i.width()
 
+    def closeEvent(self, e):
+        self.settings = QSettings(QSettings.IniFormat, QSettings.UserScope, COMPANY, APPNAME)
+        self.settings.setValue(self.__class__.__name__, self.saveGeometry())
 
-# if len(sys.argv) < 3:
-#     raise SystemExit('''
-# Usage: python silly-crossbow-crop.py <path-to-rgba-png> <threshold>
-# Example: python silly-crossbow-crop.py data/fire.png 50
-# ''')
-#
-# print SillyCrossbow()
-#
-# fire = Image.open(sys.argv[1])
-# fire.show()
-# cropper = CropTransparent(fire.width, fire.height, int(sys.argv[2]), fire.tostring(), True)
-#
-# print cropper.getCroppedOffsetX()
-# print cropper.getCroppedOffsetY()
-# print cropper.getCroppedHeight()
-# print cropper.getCroppedWidth()
-#
-# crop_rect = cropper.getRect()
-#
-# print crop_rect.x
-# print crop_rect.y
-# print crop_rect.width
-# print crop_rect.height
-#
-# cropped_image, x, y, w, h = crop_image(fire, 50)
-# cropped_image.show()
-
-# crim2 = cropper.getCroppedImage()
-# crim3 = Image.frombytes(mode='RGBA',
-#                         size=(crim2.getWidth(), crim2.getHeight()),
-#                         data=str(crim2.getData()))
-# crim3.show()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
