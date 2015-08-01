@@ -5,7 +5,7 @@ from PySide.QtCore import Qt, QRect, QSettings, QDir, QDirIterator
 
 from PySide.QtGui import QApplication, QWidget, QPainter, QImage, QTransform
 
-from SillyCrossbow import crop_image3_from_file
+from SillyCrossbow import cropImageFromFile
 from res import Ui_CropWindow
 
 COMPANY = 'Venus.Games'
@@ -38,7 +38,7 @@ class CropWidget(QWidget, Ui_CropWindow):
                 print i
 
             self.images = [QImage(i) for i in images]
-            self.images += [crop_image3_from_file(i, 50)[0] for i in images]
+            self.images += [cropImageFromFile(i, 50)[0] for i in images]
 
     def keyPressEvent(self, e):
         if e.key() == Qt.Key_Escape:
