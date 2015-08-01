@@ -3,6 +3,10 @@
 #include <limits>
 #include <iostream>
 
+#include <PySide/pyside.h>
+#include <PySide/QtGui/qpytextobject.h>
+#include <PySide/QtGui/pyside_qtgui_python.h>
+
 using namespace std;
 
 Image::Image(int width, int height) :
@@ -11,6 +15,7 @@ Image::Image(int width, int height) :
 }
 
 Image::~Image() {
+    QByteArray ba;
 }
 
 int Image::getWidth() {
