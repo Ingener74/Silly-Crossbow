@@ -10,22 +10,6 @@ struct RGBA {
     uint8_t r, g, b, a;
 };
 
-class Image {
-public:
-    Image(int width = 0, int height = 0);
-    virtual ~Image();
-
-    int getWidth();
-    int getHeight();
-    const char* getData();
-
-    void* getDataVoid();
-
-private:
-    int _width = 0, _height = 0;
-    std::vector<RGBA> _buffer;
-};
-
 struct CropRect {
     int x, y, width, height;
 };
@@ -44,13 +28,9 @@ public:
     int getCroppedOffsetY() const;
 
     CropRect getRect() const;
-    Image getCroppedImage() const;
-
-    void fillWithImage(unsigned long);
 
 private:
     CropRect _rect;
-    Image _croppedImage;
 };
 
 #endif
