@@ -3,7 +3,7 @@ import sys
 
 from PySide.QtCore import Qt, QRect, QSettings, QDir, QDirIterator
 
-from PySide.QtGui import QApplication, QWidget, QPainter, QImage, QTransform
+from PySide.QtGui import QApplication, QWidget, QPainter, QImage, QTransform, QFileDialog
 
 from SillyCrossbow import cropImageFromFile
 from res import Ui_CropWindow
@@ -22,23 +22,27 @@ class CropWidget(QWidget, Ui_CropWindow):
         self.restoreGeometry(self.settings.value(self.__class__.__name__))
 
         self.images = []
+
         if len(sys.argv) > 1:
             d = QDir(path=sys.argv[1])
-            d.setNameFilters(['*.png'])
-            d.setFilter(QDir.Files or QDir.NoDotAndDotDot)
+        else:
+            d = QDir(path=QFileDialog.getExistingDirectory())
 
-            d = QDirIterator(d)
+        d.setNameFilters(['*.png'])
+        d.setFilter(QDir.Files or QDir.NoDotAndDotDot)
 
-            images = []
+        d = QDirIterator(d)
 
-            while d.hasNext():
-                images.append(d.next())
+        images = []
 
-            for i in images:
-                print i
+        while d.hasNext():
+            images.append(d.next())
 
-            self.images = [QImage(i) for i in images]
-            self.images += [cropImageFromFile(i, 50)[0] for i in images]
+        for i in images:
+            print i
+
+        self.images = [QImage(i) for i in images]
+        self.images += [cropImageFromFile(i, 50)[0] for i in images]
 
     def keyPressEvent(self, e):
         if e.key() == Qt.Key_Escape:

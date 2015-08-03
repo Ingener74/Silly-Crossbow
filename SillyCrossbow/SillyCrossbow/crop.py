@@ -4,14 +4,26 @@ from PySide.QtGui import QImage
 from SillyCrossbow import CropTransparent
 
 
-# noinspection PyPep8Naming
-def cropImageFromFile(filename, threshold):
+def crop_image_from_file(filename, threshold):
+    """
+    Найти непрозрачную область на изображении и вырезать её
+    :param image: Имя файла изображения
+    :param threshold: Порог прозрачности для обрезания
+    :return: cropped_image - вырезанное изображение
+             x, y, width, height - координаты и размер вырезаннго прямоугольника
+    """
     image = QImage(filename)
-    return cropImage(image, threshold)
+    return crop_image(image, threshold)
 
 
-# noinspection PyPep8Naming
-def cropImage(image, threshold):
+def crop_image(image, threshold):
+    """
+    Найти непрозрачную область на изображении и вырезать её
+    :param image: Изображение
+    :param threshold: Порог прозрачности для обрезания
+    :return: cropped_image - вырезанное изображение
+             x, y, width, height - координаты и размер вырезаннго прямоугольника
+    """
     cropper = CropTransparent(image.width(), image.height(), threshold, str(image.constBits()))
     x = cropper.getCroppedOffsetX()
     y = cropper.getCroppedOffsetY()

@@ -46,7 +46,7 @@ class Installation(install_lib):
 shutil.copyfile('README.md', 'README')
 
 setup(name='SillyCrossbow',
-      version='1.1',
+      version='1.1.1',
       description="""
 Simple SWIG + distutil example
 example implements cropping transparent image borders
@@ -67,7 +67,7 @@ example implements cropping transparent image borders
           'PySide'
       ],
       classifiers=[
-          "Development Status :: 3 - Alpha",
+          "Development Status :: 4 - Beta",
           "License :: Freeware",
           "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
           "Natural Language :: English",
