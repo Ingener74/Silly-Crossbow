@@ -22,17 +22,17 @@ class SillyCrossbow(unittest.TestCase):
 
         cropper = CropTransparent(width, height, threshold, data)
 
-        assert cropper.getCroppedHeight() == 2
-        assert cropper.getCroppedWidth() == 2
-        assert cropper.getCroppedOffsetX() == 1
-        assert cropper.getCroppedOffsetY() == 1
+        self.assertEqual(cropper.getCroppedHeight(), 2)
+        self.assertEqual(cropper.getCroppedWidth(), 2)
+        self.assertEqual(cropper.getCroppedOffsetX(), 1)
+        self.assertEqual(cropper.getCroppedOffsetY(), 1)
 
         crop_rect = cropper.getRect()
 
-        assert crop_rect.x == 1
-        assert crop_rect.y == 1
-        assert crop_rect.width == 2
-        assert crop_rect.height == 2
+        self.assertEqual(crop_rect.x, 1)
+        self.assertEqual(crop_rect.y, 1)
+        self.assertEqual(crop_rect.width, 2)
+        self.assertEqual(crop_rect.height, 2)
 
     def test_imagecrop4x4(self):
         width = 6
@@ -50,31 +50,31 @@ class SillyCrossbow(unittest.TestCase):
 
         cropper = CropTransparent(width, height, threshold, data)
 
-        assert cropper.getCroppedHeight() == 3
-        assert cropper.getCroppedWidth() == 3
-        assert cropper.getCroppedOffsetX() == 2
-        assert cropper.getCroppedOffsetY() == 2
+        self.assertEqual(cropper.getCroppedHeight(), 3)
+        self.assertEqual(cropper.getCroppedWidth(), 3)
+        self.assertEqual(cropper.getCroppedOffsetX(), 2)
+        self.assertEqual(cropper.getCroppedOffsetY(), 2)
 
         crop_rect = cropper.getRect()
 
-        assert crop_rect.x == 2
-        assert crop_rect.y == 2
-        assert crop_rect.width == 3
-        assert crop_rect.height == 3
+        self.assertEqual(crop_rect.x, 2)
+        self.assertEqual(crop_rect.y, 2)
+        self.assertEqual(crop_rect.width, 3)
+        self.assertEqual(crop_rect.height, 3)
 
     def test_fire_png(self):
         fire = QImage('data/fire.png')
 
         cropper = CropTransparent(fire.width(), fire.height(), 50, str(fire.constBits()))
 
-        assert cropper.getCroppedOffsetX() == 16
-        assert cropper.getCroppedOffsetY() == 15
-        assert cropper.getCroppedHeight() == 226
-        assert cropper.getCroppedWidth() == 226
+        self.assertEqual(cropper.getCroppedOffsetX(), 16)
+        self.assertEqual(cropper.getCroppedOffsetY(), 15)
+        self.assertEqual(cropper.getCroppedHeight(), 226)
+        self.assertEqual(cropper.getCroppedWidth(), 226)
 
         crop_rect = cropper.getRect()
 
-        assert crop_rect.x == 16
-        assert crop_rect.y == 15
-        assert crop_rect.width == 226
-        assert crop_rect.height == 226
+        self.assertEqual(crop_rect.x, 16)
+        self.assertEqual(crop_rect.y, 15)
+        self.assertEqual(crop_rect.width, 226)
+        self.assertEqual(crop_rect.height, 226)
