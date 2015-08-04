@@ -13,6 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/prism.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,13 +61,13 @@
 
     <div id="carousel-example-generic" class="carousel slide crossbow-carousel" data-ride="carousel">
         <!-- Indicators -->
-<!--
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
--->
+        <!--
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+        -->
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
@@ -91,6 +92,37 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <h3>Пример использования</h3>
+            <pre>
+<code class="language-python"># encoding: utf8
+import sys
+
+from PySide.QtGui import QApplication, QWidget, QPainter, QImage
+from SillyCrossbow import crop_image_from_file
+
+class Widget(QWidget):
+    def __init__(self, parent=None):
+        QWidget.__init__(self, parent)
+
+        self.image1 = QImage('data/fire.png')
+        self.image2 = crop_image_from_file(self.image1, 50)[0]
+
+    def paintEvent(self, e):
+        painter = QPainter(self)
+
+        painter.drawImage(0, 0, self.image1)
+        painter.drawRect(0, 0, self.image1.width(), self.image1.height())
+        painter.drawImage(self.image1.width(), 0, self.image2)
+        painter.drawRect(self.image1.width(), 0, self.image2.width(), self.image2.height())
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+
+    push = Widget()
+    push.show()
+
+    sys.exit(app.exec_())</code>
+            </pre>
 
 </div>
 
@@ -98,5 +130,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/prism.js"></script>
 </body>
 </html>
