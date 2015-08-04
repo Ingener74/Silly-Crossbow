@@ -75,3 +75,4 @@ src/libSillyCrossbow.a
 src/SillyCrossbowPYTHON_wrap.cxxsrc/libSillyCrossbow.a
 .settings
 src/SillyCrossbowPYTHON_wrap.cxx
+test.py
