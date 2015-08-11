@@ -11,6 +11,11 @@ build_dir = source_dir + '/SillyCrossbow'
 output_dir = build_dir + '/SillyCrossbow'
 
 
+# добавить ещё тестирование на
+# - coveralls.io
+# - appveyor.com
+
+
 class Building(build_ext):
     def __init__(self, *args, **kwargs):
         build_ext.__init__(self, *args, **kwargs)
