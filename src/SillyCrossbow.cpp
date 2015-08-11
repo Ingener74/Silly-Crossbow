@@ -10,9 +10,12 @@ std::string SillyCrossbow() {
 The goal to make library for the crop rectangle clear edges in the image, 
 and learn how to create a library on the C++/CMake/SWIG and use python.
 
-SillCrossbow - это C++/SWIG/Python библиотека для нахождения прямоугольника обрезки
-прозрачных краёв на изображении)";
+SillCrossbow - это C++/SWIG/Python библиотека для нахождения прямоугольника обрезки прозрачных краёв на изображении)";
 }
+
+struct RGBA {
+    uint8_t r, g, b, a;
+};
 
 CropTransparent::CropTransparent() {
 }

@@ -6,10 +6,6 @@
 
 std::string SillyCrossbow();
 
-struct RGBA {
-    uint8_t r, g, b, a;
-};
-
 struct CropRect {
     int x, y, width, height;
 };

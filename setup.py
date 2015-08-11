@@ -61,7 +61,7 @@ example implements cropping transparent image borders
           'build_ext': Building,
           'install_lib': Installation
       },
-      scripts=['silly-crossbow-crop.py', 'silly-crossbow-tests.py'],
+      scripts=['silly-crossbow-crop.py'],
       data_files=[('data', ['data/fire.png', 'data/ship1.png'])],
       install_requires=[
           'PySide'

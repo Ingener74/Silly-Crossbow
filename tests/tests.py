@@ -7,7 +7,7 @@ from PySide.QtGui import QImage
 from SillyCrossbow import CropTransparent
 
 
-class SillyCrossbow(unittest.TestCase):
+class TestSillyCrossbow(unittest.TestCase):
     def test_imagecrop4x4(self):
         width = 4
         height = 4
