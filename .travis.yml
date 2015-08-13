@@ -25,6 +25,6 @@ install:
   # Travis CI servers use virtualenvs, so we need to finish the install by the following
   - python ~/virtualenv/python${TRAVIS_PYTHON_VERSION}/bin/pyside_postinstall.py -install # command to run tests
   - pip install -r test_requirements.txt
-  - pip install .
+  - python setup.py install
 
 script: py.test -q tests/tests.py
