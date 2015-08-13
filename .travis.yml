@@ -10,6 +10,16 @@ install:
   - ls cmake-3.1.0-Linux-x86_64
   - sudo cp -R cmake-3.1.0-Linux-x86_64/bin /usr/local/
   - sudo cp -R cmake-3.1.0-Linux-x86_64/share /usr/local/
+  # swig
+  - sudo apt-get install libpython-dev
+  - wget http://downloads.sourceforge.net/project/swig/swig/swig-3.0.7/swig-3.0.7.tar.gz
+  - tar xf swig-3.0.7.tar.gz
+  - cd swig-3.0.7/
+  - ./configure
+  - make
+  - sudo make install
+  - cd ..
+  # pyside
   - sudo apt-get install libqt4-dev
   - pip install PySide --no-index --find-links https://parkin.github.io/python-wheelhouse/;
   # Travis CI servers use virtualenvs, so we need to finish the install by the following
