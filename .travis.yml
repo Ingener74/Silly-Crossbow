@@ -5,6 +5,10 @@ python:
 before_install:
   - sudo apt-get update
 install:
+  - wget http://www.cmake.org/files/v3.1/cmake-3.1.0-Linux-x86_64.tar.gz
+  - tar xf cmake-3.1.0-Linux-x86_64.tar.gz
+  - ls cmake-3.1.0-Linux-x86_64
+  - sudo cp -R cmake-3.1.0-Linux-x86_64/* /usr/local/
   - sudo apt-get install libqt4-dev
   - pip install PySide --no-index --find-links https://parkin.github.io/python-wheelhouse/;
   # Travis CI servers use virtualenvs, so we need to finish the install by the following
