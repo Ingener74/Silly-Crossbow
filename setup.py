@@ -96,3 +96,4 @@ example implements cropping transparent image borders
           "Topic :: Scientific/Engineering :: Image Recognition",
       ]
       )
+
