@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="854c102f-df31-443e-a52a-f1affd11b6be" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Silly-Crossbow.iml" afterPath="$PROJECT_DIR$/.idea/Silly-Crossbow.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9d91a560-2e07-48ed-bd42-3c36c981ece3" name="pycharm_files" comment="pycharm_files" />
@@ -46,8 +44,8 @@
       <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.259366">
-              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.21613833">
+              <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -597,7 +595,19 @@
       <option name="project" value="LOCAL" />
       <updated>1439468040274</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Трэвис собери 1">
+      <created>1439468641248</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1439468641248</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Добавил инструкцию по установке cmake">
+      <created>1439469294859</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1439469294859</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -671,7 +681,9 @@
     <MESSAGE value="Трэвис подожди 2" />
     <MESSAGE value="Трэвис подожди 3" />
     <MESSAGE value="Трэвис подожди 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Трэвис подожди 4" />
+    <MESSAGE value="Трэвис собери 1" />
+    <MESSAGE value="Добавил инструкцию по установке cmake" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил инструкцию по установке cmake" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1057,8 +1069,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.259366">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.21613833">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
           <folding />
         </state>
       </provider>
