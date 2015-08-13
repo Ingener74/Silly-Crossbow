@@ -14,6 +14,7 @@ output_dir = build_dir + '/SillyCrossbow'
 # добавить ещё тестирование на
 # - coveralls.io
 # - appveyor.com
+# - https://drone.io/
 
 
 class Building(build_ext):
