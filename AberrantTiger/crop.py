@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'res/crop.ui'
+# Form implementation generated from reading ui file 'AberrantTiger/crop.ui'
 #
 # Created: Fri Jul 31 20:23:00 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2

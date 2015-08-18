@@ -6,7 +6,7 @@ from PySide.QtCore import Qt, QRect, QSettings, QDir, QDirIterator
 from PySide.QtGui import QApplication, QWidget, QPainter, QImage, QTransform, QFileDialog
 
 from SillyCrossbow import crop_image_from_file
-from res import Ui_CropWindow
+from AberrantTiger import Ui_CropWindow
 
 COMPANY = 'Venus.Games'
 APPNAME = 'SillyCrossbow'
