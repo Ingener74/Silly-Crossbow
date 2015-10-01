@@ -31,7 +31,7 @@ class Building(build_ext):
                         '-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=' + output_dir.replace('\\', '/'),
                         '-DCMAKE_SWIG_OUTDIR=' + output_dir.replace('\\', '/'),
                         ])
-        elif platform.system() == 'Linux':
+        elif platform.system() == 'Linux' or platform.system() == 'Darwin':
             self.spawn(['cmake',
                         source_dir,
                         '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + output_dir,
@@ -39,7 +39,7 @@ class Building(build_ext):
                         '-DCMAKE_SWIG_OUTDIR=' + output_dir,
                         ])
         else:
-            raise SystemError('Windows or Linux only')
+            raise SystemError('Windows or Linux or Darwin only')
         self.spawn(['cmake', '--build', source_dir, '--clean-first'])
 
 
